@@ -1,0 +1,27 @@
+#------------------------------------生产环境配置---------------------------------
+spring:
+  #开发环境-数据库连接配置
+  datasource:
+     url: jdbc:mysql://106.15.178.92:3306/face?useUnicode=true&characterEncoding=utf-8
+     username: face
+     password: qq5022311
+     driver-class-name: com.mysql.jdbc.Driver
+     type: com.zaxxer.hikari.HikariDataSource
+     hikari:
+        #公式：connections =cpu核心数*2 + 硬盘数
+        maximum-pool-size: 15
+        max-lifetime: 60000
+        #控制自动提交行为
+        #auto-commit: true
+        #最大空闲超时时间
+        #idle-timeout: 60000
+        #validation-timeout: 3000
+        #login-timeout: 5
+        #connection-timeout: 60000
+        #connection-test-query: SELECT 1
+########################附件虚拟目录映射########################
+file:
+  mapping: https://dev-xcx.maoln.com/downFile
+  path: /data/folder
+###########################关闭发开发者模式####################
+devmode: false
